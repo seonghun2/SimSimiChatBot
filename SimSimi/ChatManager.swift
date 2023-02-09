@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import Alamofire
+import RxRelay
 
 struct ChatManager {
     
@@ -15,7 +16,7 @@ struct ChatManager {
     
     private init() { }
     
-    var responseMessage: Observable<String>?
+    var responseMessage = BehaviorRelay<String>(value: "")
     
     let apiKey = "wQKUqLtth~2TFkvgHJT9d25YW8Tx2ruPtYgb3You"
     
@@ -30,6 +31,9 @@ struct ChatManager {
         AF.request(baseURL, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers)
             .responseDecodable(of: SimsimiResponse.self) { response in
                 print(response)
+                response.result.map { response in
+                    responseMessage.accept(response.atext!)
+                }
             }
     }
 }

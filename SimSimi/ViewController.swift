@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 class ViewController: UIViewController {
     
@@ -18,17 +19,22 @@ class ViewController: UIViewController {
     
     let chatManager = ChatManager.shared
     
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         messageStackView.backgroundColor = .yellow
         
-        //chatManager.sendMessage(message: "몇살이냐?")
+        chatManager.responseMessage
+            .compactMap { $0 }
+            .subscribe { message in
+                self.makeMessageBox(message: message)
+            }
+            .disposed(by: disposeBag)
     }
-
-    @IBAction func addMessageBtnTapped(_ sender: Any) {
-        let message = messageTextField.text
+    
+    func makeMessageBox(message: String) {
         if message == "" { return }
-        
         let newMessage = UserTalkView()
         newMessage.message = message
         newMessage.setUI()
@@ -36,14 +42,21 @@ class ViewController: UIViewController {
         newMessage.backgroundColor = .blue
         
         messageStackView.addArrangedSubview(newMessage)
-        //messageStackView.insertArrangedSubview(<#T##view: UIView##UIView#>, at: <#T##Int#>)
         newMessage.snp.makeConstraints { make in
             make.height.equalTo(50)
         }
+        
         let bottomOffset = CGPoint(x: 0, y: messageScrollView.contentSize.height - messageScrollView.bounds.height + messageScrollView.contentInset.bottom + 70)
         messageScrollView.setContentOffset(bottomOffset, animated: false)
         
         messageTextField.text = nil
+    }
+
+    @IBAction func addMessageBtnTapped(_ sender: Any) {
+        let message = messageTextField.text
+        if message == "" { return }
+        chatManager.sendMessage(message: message!)
+        makeMessageBox(message: message!)
     }
 }
 
