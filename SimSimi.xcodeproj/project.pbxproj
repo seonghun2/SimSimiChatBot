@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		CE3856CC2993812C00B7AEFC /* SimsimiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3856CB2993812C00B7AEFC /* SimsimiResponse.swift */; };
-		CE3856CE2993818100B7AEFC /* UserTalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3856CD2993818100B7AEFC /* UserTalkView.swift */; };
-		CE3856D02993819900B7AEFC /* SimsimiTalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3856CF2993819900B7AEFC /* SimsimiTalkView.swift */; };
+		CE3856CE2993818100B7AEFC /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3856CD2993818100B7AEFC /* MessageView.swift */; };
 		CE3856D22993840900B7AEFC /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3856D12993840900B7AEFC /* ChatManager.swift */; };
 		CE3856D52993850400B7AEFC /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CE3856D42993850400B7AEFC /* RxCocoa */; };
 		CE3856D72993850400B7AEFC /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = CE3856D62993850400B7AEFC /* RxRelay */; };
 		CE3856D92993850400B7AEFC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE3856D82993850400B7AEFC /* RxSwift */; };
+		CE515AFE29962747005E60F4 /* NanumGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE515AFD29962747005E60F4 /* NanumGothic.ttf */; };
+		CE515B00299627A9005E60F4 /* NanumGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE515AFF299627A9005E60F4 /* NanumGothicBold.ttf */; };
 		CE8ECF43299371870038E3EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8ECF42299371870038E3EF /* AppDelegate.swift */; };
 		CE8ECF45299371870038E3EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8ECF44299371870038E3EF /* SceneDelegate.swift */; };
 		CE8ECF47299371870038E3EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8ECF46299371870038E3EF /* ViewController.swift */; };
@@ -26,9 +27,10 @@
 
 /* Begin PBXFileReference section */
 		CE3856CB2993812C00B7AEFC /* SimsimiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimsimiResponse.swift; sourceTree = "<group>"; };
-		CE3856CD2993818100B7AEFC /* UserTalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTalkView.swift; sourceTree = "<group>"; };
-		CE3856CF2993819900B7AEFC /* SimsimiTalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimsimiTalkView.swift; sourceTree = "<group>"; };
+		CE3856CD2993818100B7AEFC /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		CE3856D12993840900B7AEFC /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
+		CE515AFD29962747005E60F4 /* NanumGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.ttf; sourceTree = "<group>"; };
+		CE515AFF299627A9005E60F4 /* NanumGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicBold.ttf; sourceTree = "<group>"; };
 		CE8ECF3F299371870038E3EF /* SimSimi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimSimi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8ECF42299371870038E3EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE8ECF44299371870038E3EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,9 +84,10 @@
 				CE8ECF4D299371890038E3EF /* LaunchScreen.storyboard */,
 				CE8ECF50299371890038E3EF /* Info.plist */,
 				CE3856CB2993812C00B7AEFC /* SimsimiResponse.swift */,
-				CE3856CD2993818100B7AEFC /* UserTalkView.swift */,
-				CE3856CF2993819900B7AEFC /* SimsimiTalkView.swift */,
+				CE3856CD2993818100B7AEFC /* MessageView.swift */,
 				CE3856D12993840900B7AEFC /* ChatManager.swift */,
+				CE515AFD29962747005E60F4 /* NanumGothic.ttf */,
+				CE515AFF299627A9005E60F4 /* NanumGothicBold.ttf */,
 			);
 			path = SimSimi;
 			sourceTree = "<group>";
@@ -159,8 +162,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE515AFE29962747005E60F4 /* NanumGothic.ttf in Resources */,
 				CE8ECF4F299371890038E3EF /* LaunchScreen.storyboard in Resources */,
 				CE8ECF4C299371890038E3EF /* Assets.xcassets in Resources */,
+				CE515B00299627A9005E60F4 /* NanumGothicBold.ttf in Resources */,
 				CE8ECF4A299371870038E3EF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,10 +177,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE3856D02993819900B7AEFC /* SimsimiTalkView.swift in Sources */,
 				CE8ECF47299371870038E3EF /* ViewController.swift in Sources */,
 				CE8ECF43299371870038E3EF /* AppDelegate.swift in Sources */,
-				CE3856CE2993818100B7AEFC /* UserTalkView.swift in Sources */,
+				CE3856CE2993818100B7AEFC /* MessageView.swift in Sources */,
 				CE3856D22993840900B7AEFC /* ChatManager.swift in Sources */,
 				CE3856CC2993812C00B7AEFC /* SimsimiResponse.swift in Sources */,
 				CE8ECF45299371870038E3EF /* SceneDelegate.swift in Sources */,

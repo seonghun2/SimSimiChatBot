@@ -17,14 +17,13 @@ struct ChatManager {
     private init() { }
     
     var responseMessage = BehaviorRelay<String>(value: "")
-    
+   
     let apiKey = "wQKUqLtth~2TFkvgHJT9d25YW8Tx2ruPtYgb3You"
     
     let baseURL = "https://wsapi.simsimi.com/190410/talk"
     
     func sendMessage(message: String) {
-        let headers = HTTPHeaders(["Content-Type": "application/json",
-                                       "x-api-key": apiKey])
+        let headers = HTTPHeaders(["Content-Type": "application/json", "x-api-key": apiKey])
         
         let parameters = ["utext": message, "lang": "ko"]
         

@@ -17,29 +17,33 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var messageTextField: UITextField!
     
+    @IBOutlet weak var messageSendBtn: UIButton!
+    
     let chatManager = ChatManager.shared
     
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        messageStackView.backgroundColor = .yellow
         
         chatManager.responseMessage
             .compactMap { $0 }
             .subscribe { message in
-                self.makeMessageBox(message: message)
+                self.makeMessageBox(isBotMessage: true, message: message)
+                self.messageSendBtn.setImage(UIImage(systemName: "paperplane.fill"), for: .normal)
+                self.messageSendBtn.isEnabled = true
             }
             .disposed(by: disposeBag)
     }
     
-    func makeMessageBox(message: String) {
+    func makeMessageBox(isBotMessage: Bool, message: String) {
         if message == "" { return }
-        let newMessage = UserTalkView()
-        newMessage.message = message
-        newMessage.setUI()
         
-        newMessage.backgroundColor = .blue
+        let newMessage = MessageView()
+        
+        newMessage.message = message
+        newMessage.isBotMessage = isBotMessage
+        newMessage.setUI()
         
         messageStackView.addArrangedSubview(newMessage)
         newMessage.snp.makeConstraints { make in
@@ -47,6 +51,7 @@ class ViewController: UIViewController {
         }
         
         let bottomOffset = CGPoint(x: 0, y: messageScrollView.contentSize.height - messageScrollView.bounds.height + messageScrollView.contentInset.bottom + 70)
+        
         messageScrollView.setContentOffset(bottomOffset, animated: false)
         
         messageTextField.text = nil
@@ -55,8 +60,11 @@ class ViewController: UIViewController {
     @IBAction func addMessageBtnTapped(_ sender: Any) {
         let message = messageTextField.text
         if message == "" { return }
+        self.messageSendBtn.setImage(UIImage(systemName: "timelapse"), for: .normal)
+        messageSendBtn.isEnabled = false
+        
         chatManager.sendMessage(message: message!)
-        makeMessageBox(message: message!)
+        makeMessageBox(isBotMessage: false, message: message!)
     }
 }
 
