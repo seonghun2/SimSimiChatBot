@@ -17,6 +17,7 @@ struct ChatManager {
     private init() { }
     
     var responseMessage = BehaviorRelay<String>(value: "")
+    //var responseMessage: BehaviorRelay<String>?
    
     let apiKey = "wQKUqLtth~2TFkvgHJT9d25YW8Tx2ruPtYgb3You"
     

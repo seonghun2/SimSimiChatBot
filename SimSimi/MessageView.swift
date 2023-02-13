@@ -49,7 +49,7 @@ class MessageView: UIView {
         let messageLabel: UILabel = {
             let lbl = UILabel()
             lbl.text = message
-            lbl.font = UIFont(name: "NanumGothicBold", size: 12)
+            lbl.font = UIFont(name: "NanumGothicBold", size: 14)
             return lbl
         }()
         

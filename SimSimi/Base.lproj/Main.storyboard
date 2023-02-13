@@ -17,6 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iLQ-zZ-YlV">
+                                <rect key="frame" x="0.0" y="47" width="390" height="677"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rkw-BK-pDc">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="0.0"/>
+                                        <subviews>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kj1-A4-Pl6">
+                                                <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="rkw-BK-pDc" secondAttribute="bottom" id="2HJ-Bo-61b"/>
+                                    <constraint firstItem="rkw-BK-pDc" firstAttribute="width" secondItem="iLQ-zZ-YlV" secondAttribute="width" id="5Wm-5J-Ms1"/>
+                                    <constraint firstAttribute="trailing" secondItem="rkw-BK-pDc" secondAttribute="trailing" id="OP9-fb-Go2"/>
+                                    <constraint firstItem="rkw-BK-pDc" firstAttribute="leading" secondItem="iLQ-zZ-YlV" secondAttribute="leading" id="Q9a-Bj-NTs"/>
+                                    <constraint firstItem="rkw-BK-pDc" firstAttribute="top" secondItem="iLQ-zZ-YlV" secondAttribute="top" id="stn-RY-wHt"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Mr8-9A-ZU2"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Gbg-0S-b2s"/>
+                            </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4U0-S2-ObB">
                                 <rect key="frame" x="0.0" y="724" width="390" height="120"/>
                                 <subviews>
@@ -46,23 +71,6 @@
                                     <constraint firstAttribute="bottom" secondItem="jZ7-4R-Fca" secondAttribute="bottom" constant="50" id="xBE-Qb-0aN"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iLQ-zZ-YlV">
-                                <rect key="frame" x="0.0" y="47" width="390" height="677"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rkw-BK-pDc">
-                                        <rect key="frame" x="0.0" y="325" width="390" height="352"/>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="rkw-BK-pDc" secondAttribute="bottom" id="2HJ-Bo-61b"/>
-                                    <constraint firstItem="rkw-BK-pDc" firstAttribute="width" secondItem="iLQ-zZ-YlV" secondAttribute="width" id="5Wm-5J-Ms1"/>
-                                    <constraint firstAttribute="trailing" secondItem="rkw-BK-pDc" secondAttribute="trailing" id="OP9-fb-Go2"/>
-                                    <constraint firstItem="rkw-BK-pDc" firstAttribute="leading" secondItem="iLQ-zZ-YlV" secondAttribute="leading" id="Q9a-Bj-NTs"/>
-                                    <constraint firstItem="rkw-BK-pDc" firstAttribute="top" secondItem="iLQ-zZ-YlV" secondAttribute="top" id="stn-RY-wHt"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="Mr8-9A-ZU2"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="Gbg-0S-b2s"/>
-                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -81,6 +89,7 @@
                         <outlet property="messageSendBtn" destination="jZ7-4R-Fca" id="HCn-wp-XzU"/>
                         <outlet property="messageStackView" destination="rkw-BK-pDc" id="2hQ-aH-1yA"/>
                         <outlet property="messageTextField" destination="ldd-jB-jLL" id="SbE-NZ-bKV"/>
+                        <outlet property="userInputBottomConstraint" destination="a89-rX-GCF" id="43c-oa-Fal"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
